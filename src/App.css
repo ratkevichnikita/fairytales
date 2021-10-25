@@ -1,24 +1,27 @@
 /*FONTS - START*/
 
 /*google font - Roboto*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');*/
 
 /*Circle */
 @font-face {
     font-family: 'Circle';
-    src: url('./fonts/Circe-Regular.eot'); /* IE9 Compat Modes */
-    src: url('./fonts/Circe-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('./fonts/Circe-Regular.woff2') format('woff2'), /* Super Modern Browsers */ url('./fonts/Circe-Regular.woff') format('woff'), /* Pretty Modern Browsers */ url('./fonts/Circe-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+    src: url('./assets/fonts/Circe-Regular.eot'); /* IE9 Compat Modes */
+    src: url('./assets/fonts/Circe-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('./assets/fonts/Circe-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('./assets/fonts/Circe-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+    url('./assets/fonts/Circe-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
     font-display: swap;
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'Noto';
-    src: url('./fonts/NotoSerif.eot');
-    src: url('./fonts/NotoSerif.eot?#iefix') format('embedded-opentype'),
-    url('./fonts/NotoSerif.woff2') format('woff2'),
-    url('./fonts/NotoSerif.woff') format('woff'),
-    url('./fonts/NotoSerif.ttf') format('truetype');
+    src: url('./assets/fonts/NotoSerif.eot');
+    src: url('./assets/fonts/NotoSerif.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/NotoSerif.woff2') format('woff2'),
+    url('./assets/fonts/NotoSerif.woff') format('woff'),
+    url('./assets/fonts/NotoSerif.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -26,11 +29,11 @@
 
 @font-face {
     font-family: 'LifehackSans';
-    src: url('./fonts/LifehackSans-Medium.eot');
-    src: url('./fonts/LifehackSans-Medium.eot?#iefix') format('embedded-opentype'),
-    url('./fonts/LifehackSans-Medium.woff2') format('woff2'),
-    url('./fonts/LifehackSans-Medium.woff') format('woff'),
-    url('./fonts/LifehackSans-Medium.ttf') format('truetype');
+    src: url('./assets/fonts/LifehackSans-Medium.eot');
+    src: url('./assets/fonts/LifehackSans-Medium.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/LifehackSans-Medium.woff2') format('woff2'),
+    url('./assets/fonts/LifehackSans-Medium.woff') format('woff'),
+    url('./assets/fonts/LifehackSans-Medium.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -59,14 +62,6 @@ body {
     font-weight: 400;
     margin: 0;
     padding: 0;
-    /*position: fixed;*/
-    /*overflow: hidden;*/
-    /*left: 0;*/
-    /*right: 0;*/
-    /*top: 0;*/
-    /*bottom: 0;*/
-    /*width: 1080px;*/
-    /*height: 790px;*/
 }
 
 .app {

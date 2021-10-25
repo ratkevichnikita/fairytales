@@ -39,33 +39,44 @@
     /*height: clamp(300px, calc(83vh - 75px), 640px);*/
 }
 
-.flip-page-parent:before {
-    content: '';
-    display: block;
-    width: calc(50% + 3vw);
-    height: calc(100% + 15px);
-    background: url('../../images/book-pages/book-right-half.png') no-repeat center / contain;
+.flip-page-parent:after {
+    content:'';
+    background: linear-gradient(to right, transparent 0%,rgba(0,0,0,0.2) 46%,rgba(0,0,0,0.5) 49%,rgba(0,0,0,0.6) 50%,rgba(0,0,0,0.5) 51%,rgba(0,0,0,0.2) 52%,transparent 100%);
+    bottom: 0;
+    left: 50%;
     position: absolute;
-    right: -26px;
-    top: -7px;
-    /*box-shadow: 3px 10px 60px rgba(0, 0, 0, 0.7);*/
-    z-index: -1;
+    top: 0;
+    transform: translate(-50%,0);
+    width: 3em;
 }
 
-.page-flip-wrapper.static-bg .flip-page-parent:after {
-    content: '';
-    display: block;
-    width: calc(100% + 50px);
-    height: calc(100% + 30px);
-    background: url('../../images/book-pages/book-new.png') no-repeat center / contain;
-    position: absolute;
-    right: -29px;
-    top: -28px;
-    /*box-shadow: 3px 10px 60px rgba(0, 0, 0, 0.7);*/
-    transition: 0.25s;
-    opacity: 1;
-    z-index: -1;
-}
+/*.flip-page-parent:before {*/
+/*    content: '';*/
+/*    display: block;*/
+/*    width: calc(50% + 3vw);*/
+/*    height: calc(100% + 15px);*/
+/*    background: url('../../images/book-pages/book-right-half.png') no-repeat center / contain;*/
+/*    position: absolute;*/
+/*    right: -26px;*/
+/*    top: -7px;*/
+/*    !*box-shadow: 3px 10px 60px rgba(0, 0, 0, 0.7);*!*/
+/*    z-index: -1;*/
+/*}*/
+
+/*.page-flip-wrapper.static-bg .flip-page-parent:after {*/
+/*    content: '';*/
+/*    display: block;*/
+/*    width: calc(100% + 50px);*/
+/*    height: calc(100% + 30px);*/
+/*    background: url('../../images/book-pages/book-new.png') no-repeat center / contain;*/
+/*    position: absolute;*/
+/*    right: -29px;*/
+/*    top: -28px;*/
+/*    !*box-shadow: 3px 10px 60px rgba(0, 0, 0, 0.7);*!*/
+/*    transition: 0.25s;*/
+/*    opacity: 1;*/
+/*    z-index: -1;*/
+/*}*/
 
 .page-flip-wrapper.static-bg .flip-page-parent:before {
     opacity: 0;
@@ -89,17 +100,17 @@
     background-color: grey;
 }
 
-.page-cover:before {
-    content: '';
-    width: 100%;
-    height: calc(100% + 5px);
-    background-image: url('../../images/book-pages/page-cover.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    left: 0;
-    top: -4px;
-}
+/*.page-cover:before {*/
+/*    content: '';*/
+/*    width: 100%;*/
+/*    height: calc(100% + 5px);*/
+/*    background-image: url('../../images/book-pages/page-cover.png');*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    top: -4px;*/
+/*}*/
 
 .page-cover-title {
     height: 100%;
@@ -114,84 +125,83 @@
 .flip-page {
     background-repeat: no-repeat;
     background-size: contain;
-    /*background-color: #fff;*/
+    background-color: #fff;
 }
 
-.flip-page:nth-child(odd) {
-    background-image: url('../../images/book-pages/page2.png');
-}
+/*.flip-page:nth-child(odd) {*/
+/*    background-image: url('../../images/book-pages/page2.png');*/
+/*}*/
 
-.flip-page:nth-child(1) {
-    background-image: url('../../images/book-pages/page2.png');
-}
+/*.flip-page:nth-child(1) {*/
+/*    background-image: url('../../images/book-pages/page2.png');*/
+/*}*/
 
-.flip-page:not(.first-page):nth-child(even) {
-    background-image: url('../../images/book-pages/page1.png');
-}
+/*.flip-page:not(.first-page):nth-child(even) {*/
+/*    background-image: url('../../images/book-pages/page1.png');*/
+/*}*/
 
-.flip-page.first-page:before {
-    content: '';
-    width: 510px;
-    height: calc(100% + 15px);
-    background-image: url('../../images/book-pages/first-page.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
-    display: block;
-    position: absolute;
-    left: -29px;
-    top: -7px;
-    z-index: 1;
-    /*box-shadow: 3px 10px 60px rgba(0, 0, 0, 0.7);*/
-}
+/*.flip-page.first-page:before {*/
+/*    content: '';*/
+/*    width: 510px;*/
+/*    height: calc(100% + 15px);*/
+/*    background-image: url('../../images/book-pages/first-page.png');*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+/*    background-position: 50% 50%;*/
+/*    display: block;*/
+/*    position: absolute;*/
+/*    left: -29px;*/
+/*    top: -7px;*/
+/*    z-index: 1;*/
+/*    !*box-shadow: 3px 10px 60px rgba(0, 0, 0, 0.7);*!*/
+/*}*/
 
-.flip-page.first-page:before {
-    content: '';
-    width: calc(100% + 50px);
-    height: calc(100% + 15px);
-    background-image: url('../../images/book-pages/first-page.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 50% 50%;
-    display: block;
-    position: absolute;
-    left: -39px;
-    top: -7px;
-    z-index: 1;
-    /*box-shadow: 3px 10px 60px rgba(0, 0, 0, 0.7);*/
-}
+/*.flip-page.first-page:before {*/
+/*    content: '';*/
+/*    width: calc(100% + 50px);*/
+/*    height: calc(100% + 15px);*/
+/*    background-image: url('../../images/book-pages/first-page.png');*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: contain;*/
+/*    background-position: 50% 50%;*/
+/*    display: block;*/
+/*    position: absolute;*/
+/*    left: -39px;*/
+/*    top: -7px;*/
+/*    z-index: 1;*/
+/*    !*box-shadow: 3px 10px 60px rgba(0, 0, 0, 0.7);*!*/
+/*}*/
 
-.page-flip-wrapper.static-bg .flip-page.first-page:before {
-    background-image: url('../../images/book-pages/page1.png');
-    /*background-size: auto;*/
-    width: calc(100% + 50px);
-    height: 100%;
-    background-size: contain;
-}
+/*.page-flip-wrapper.static-bg .flip-page.first-page:before {*/
+/*    background-image: url('../../images/book-pages/page1.png');*/
+/*    !*background-size: auto;*!*/
+/*    width: calc(100% + 50px);*/
+/*    height: 100%;*/
+/*    background-size: contain;*/
+/*}*/
 
 .flip-page p {
     font-family: 'Noto', serif;
     color: #734713;
     width: 100%;
     position: relative;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.5em;
     z-index: var(--zIndex-medium);
 }
 
 .flip-page p:not(:last-child) {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-.flip-page.first-page .flip-page-inner {
-    padding: 50px 50px 50px 70px;
-}
+/*.flip-page.first-page .flip-page-inner {*/
+/*    padding: 50px 50px 50px 70px;*/
+/*}*/
 
 .flip-page .flip-page-inner {
-    height: 100%;
-    max-height: calc(100% - 110px);
+    height: 90%;
     overflow: hidden;
-    padding: 50px 50px 10px;
+    padding: 20px;
     margin-top: 10px;
 }
 
@@ -224,17 +234,15 @@
     margin: 0 7px;
 }
 
-.flip-page.--left .flip-page-number {
-    margin-right: 60px;
-}
-
 .flip-page-number {
     position: relative;
     z-index: var(--zIndex-low);
     font-size: 14px;
     margin-top: 10px;
-    margin-right: 80px;
-    margin-left: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 5px;
+    border-top: 1px solid rgba(0,0,0,0.3);
 }
 
 .flip-page.--right .flip-page-number  {
