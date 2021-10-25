@@ -1,0 +1,31 @@
+.container {
+    position: relative;
+    background: url('./../../images/bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    overflow-y: hidden;
+    padding-bottom: 80px;
+    max-height: 830px;
+}
+
+.container:before {
+    content: '';
+    position: absolute;
+    left: 20vw;
+    top: -70px;
+    width: 168px;
+    height: 107px;
+    background: url('../../images/icons/cloud.svg') no-repeat center ;
+    z-index: var(--zIndex-low);
+}
+
+.image {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: var(--zIndex-hight);
+}

@@ -1,0 +1,63 @@
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+    grid-gap: 20px;
+    align-items: center;
+}
+
+.item {
+    position: relative;
+    min-width: 120px;
+    padding: 6px 10px;
+    color: #373277;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.item:before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: url('../../images/icons/arrow.svg') no-repeat center;
+    position: absolute;
+    right: 10px;
+    top: calc(50% - 6px);
+}
+
+.inner {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 10px);
+    background-color: #fff;
+    color: #373277;
+    padding: 10px;
+    max-height: 230px;
+    overflow-y: auto;
+    z-index: var(--zIndex-medium);
+}
+
+.inner li {
+    font-size: 14px;
+    line-height: var(--line-Height);
+}
+
+.inner li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.freeBookSort p {
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.freeBookSort label {
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 900px) {
+    .list {
+        max-width: 100%;
+    }
+}

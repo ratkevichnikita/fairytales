@@ -1,0 +1,30 @@
+.modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.2);
+    z-index: var(--zIndex-hight);
+}
+
+.modal__title {
+    color: #373277;
+}
+
+.modal__container {
+    position: relative;
+    background-color: #fff;
+    padding: 30px;
+    width: 100%;
+}
+
+.modal__close {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
+}

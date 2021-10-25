@@ -1,0 +1,33 @@
+.header-inner {
+    position: relative;
+    z-index: var(--zIndex-medium);
+    display: grid;
+    grid-template-areas: 'logo search menu';
+    grid-template-columns: max-content minmax(250px,530px) 30px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+
+.header-logo {
+    grid-area: logo;
+}
+
+.header-home {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-inngang {
+    font-family: 'LifeHackSans', serif;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 110%;
+    letter-spacing: 0.105em;
+    color: #fff;
+}

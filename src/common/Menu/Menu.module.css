@@ -1,0 +1,86 @@
+.parentMenu {
+    grid-area: menu;
+}
+
+.menu {
+    width: 30px;
+    height: 23px;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+}
+.menu span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+}
+
+.menu span:before,
+.menu span:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s;
+}
+
+.menu span:after {
+    top: auto;
+    bottom: 0;
+}
+
+.menu.active span {
+    background-color: transparent;
+}
+
+.menu.active span:before {
+    transform: translate(0, 12px) rotate(45deg);
+}
+
+.menu.active span:after {
+    transform: translate(0, -9px) rotate(-45deg);
+}
+
+.menuList {
+    background-color: red;
+    width: 100px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 99;
+}
+
+.loginMenu {
+    color: #323232;
+    width: 100%;
+    background: url('../../images/login/login-burder.svg');
+    background-repeat: no-repeat;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loginMenu .menu {
+    margin: 0 auto;
+}
+
+.loginMenu .menu span,
+.loginMenu .menu span:before,
+.loginMenu .menu span:after {
+    background-color: #502B00;
+}
+.loginMenu .menu.active span {
+    background-color: transparent;
+}
+
+
+
+

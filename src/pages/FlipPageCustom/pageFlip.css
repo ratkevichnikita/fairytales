@@ -1,0 +1,277 @@
+/*---------- styles for page flip */
+
+.flip-page-container {
+    position: relative;
+    background: url('../../images/fairytalebg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.page-flip-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    animation: opacity 0.5s linear forwards;
+    /*height: clamp(300px, calc(85vh - 115px), 640px);*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flip-page-container .header-inner {
+    padding: 15px 0 0;
+}
+
+.flip-page-parent {
+   margin: 0 auto;
+    z-index: var(--zIndex-low);
+    /*height: clamp(300px, calc(83vh - 75px), 640px);*/
+}
+
+.flip-page-parent:before {
+    content: '';
+    display: block;
+    width: calc(50% + 3vw);
+    height: calc(100% + 15px);
+    background: url('../../images/book-pages/book-right-half.png') no-repeat center / contain;
+    position: absolute;
+    right: -26px;
+    top: -7px;
+    /*box-shadow: 3px 10px 60px rgba(0, 0, 0, 0.7);*/
+    z-index: -1;
+}
+
+.page-flip-wrapper.static-bg .flip-page-parent:after {
+    content: '';
+    display: block;
+    width: calc(100% + 50px);
+    height: calc(100% + 30px);
+    background: url('../../images/book-pages/book-new.png') no-repeat center / contain;
+    position: absolute;
+    right: -29px;
+    top: -28px;
+    /*box-shadow: 3px 10px 60px rgba(0, 0, 0, 0.7);*/
+    transition: 0.25s;
+    opacity: 1;
+    z-index: -1;
+}
+
+.page-flip-wrapper.static-bg .flip-page-parent:before {
+    opacity: 0;
+    transition: 0.25s;
+    box-shadow: none;
+}
+
+.flip-page-parent.isFlipping {
+    pointer-events: none;
+}
+
+.flip-page-parent.isFlipping + .page-flip-box > .flip-page-arrow {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.page-cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+}
+
+.page-cover:before {
+    content: '';
+    width: 100%;
+    height: calc(100% + 5px);
+    background-image: url('../../images/book-pages/page-cover.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: -4px;
+}
+
+.page-cover-title {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: var(--zIndex-low);
+}
+
+.flip-page {
+    background-repeat: no-repeat;
+    background-size: contain;
+    /*background-color: #fff;*/
+}
+
+.flip-page:nth-child(odd) {
+    background-image: url('../../images/book-pages/page2.png');
+}
+
+.flip-page:nth-child(1) {
+    background-image: url('../../images/book-pages/page2.png');
+}
+
+.flip-page:not(.first-page):nth-child(even) {
+    background-image: url('../../images/book-pages/page1.png');
+}
+
+.flip-page.first-page:before {
+    content: '';
+    width: 510px;
+    height: calc(100% + 15px);
+    background-image: url('../../images/book-pages/first-page.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    display: block;
+    position: absolute;
+    left: -29px;
+    top: -7px;
+    z-index: 1;
+    /*box-shadow: 3px 10px 60px rgba(0, 0, 0, 0.7);*/
+}
+
+.flip-page.first-page:before {
+    content: '';
+    width: calc(100% + 50px);
+    height: calc(100% + 15px);
+    background-image: url('../../images/book-pages/first-page.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+    display: block;
+    position: absolute;
+    left: -39px;
+    top: -7px;
+    z-index: 1;
+    /*box-shadow: 3px 10px 60px rgba(0, 0, 0, 0.7);*/
+}
+
+.page-flip-wrapper.static-bg .flip-page.first-page:before {
+    background-image: url('../../images/book-pages/page1.png');
+    /*background-size: auto;*/
+    width: calc(100% + 50px);
+    height: 100%;
+    background-size: contain;
+}
+
+.flip-page p {
+    font-family: 'Noto', serif;
+    color: #734713;
+    width: 100%;
+    position: relative;
+    font-size: 20px;
+    line-height: 1.5em;
+    z-index: var(--zIndex-medium);
+}
+
+.flip-page p:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.flip-page.first-page .flip-page-inner {
+    padding: 50px 50px 50px 70px;
+}
+
+.flip-page .flip-page-inner {
+    height: 100%;
+    max-height: calc(100% - 110px);
+    overflow: hidden;
+    padding: 50px 50px 10px;
+    margin-top: 10px;
+}
+
+.page-cover-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-flip-box {
+    display: grid;
+    grid-auto-flow: column;
+    /*grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));*/
+    align-items: center;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    flex-shrink: 0;
+}
+
+.flip-page-count-pages {
+    width: 130px;
+    color: #fff;
+    font-size: 18px;
+    text-align: right;
+    margin-left: auto;
+}
+
+.flip-page-count-pages span {
+    margin: 0 7px;
+}
+
+.flip-page.--left .flip-page-number {
+    margin-right: 60px;
+}
+
+.flip-page-number {
+    position: relative;
+    z-index: var(--zIndex-low);
+    font-size: 14px;
+    margin-top: 10px;
+    margin-right: 80px;
+    margin-left: 40px;
+}
+
+.flip-page.--right .flip-page-number  {
+    text-align: right;
+}
+
+.flip-page-arrow {
+    background-color: transparent;
+    border: none;
+    width: fit-content;
+    min-width: 42px;
+}
+
+.flip-page-arrow.prev {
+    transform: rotate(180deg);
+}
+
+.flip-page-arrow.next {
+    margin-left: auto;
+}
+
+.flip-page-arrow.prev.hidden,
+.flip-page-arrow.next.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/*.flip-page-parent.isFlipping .controlRewindPrev,*/
+/*.flip-page-parent.isFlipping .controlRewindNext {*/
+/*    pointer-events: none;*/
+/*    opacity: 0.5;*/
+/*}*/
+
+
+@media screen and (max-width: 577px) {
+    .page-flip-box {
+        transform: scale(0.7);
+        align-self: flex-end;
+    }
+}

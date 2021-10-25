@@ -1,0 +1,70 @@
+.controls {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(4,max-content);
+    align-items: center;
+}
+
+.controlVolume {
+    position: relative;
+}
+
+.volumeRange {
+    position: absolute;
+    bottom: 100px;
+    left: -45px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 120px;
+    height: 12px;
+    background-color: rgba(0, 0, 0, 0.8);
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    z-index: var(--zIndex-medium);
+    transform: rotate(-90deg);
+}
+
+.volumeRange::-webkit-slider-thumb,
+.volumeRange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    cursor: pointer;
+    pointer-events: visible;
+    border-radius: 50%;
+}
+
+.player {
+    width: 370px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.playerTimer {
+    color: #fff;
+    width: 135px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.playerTimer span {
+    width: 100%;
+    text-align: center;
+}
+
+.playerTimer .delimeter {
+    max-width: 20px;
+}
+
+.flip-page-parent.isFlipping + .page-flip-box .controlRewindPrev,
+.flip-page-parent.isFlipping + .page-flip-box .controlRewindNext{
+    opacity: .5;
+    pointer-events: none;
+}
+

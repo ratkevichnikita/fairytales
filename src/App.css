@@ -1,0 +1,179 @@
+/*FONTS - START*/
+
+/*google font - Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/*Circle */
+@font-face {
+    font-family: 'Circle';
+    src: url('./fonts/Circe-Regular.eot'); /* IE9 Compat Modes */
+    src: url('./fonts/Circe-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('./fonts/Circe-Regular.woff2') format('woff2'), /* Super Modern Browsers */ url('./fonts/Circe-Regular.woff') format('woff'), /* Pretty Modern Browsers */ url('./fonts/Circe-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+    font-display: swap;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Noto';
+    src: url('./fonts/NotoSerif.eot');
+    src: url('./fonts/NotoSerif.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/NotoSerif.woff2') format('woff2'),
+    url('./fonts/NotoSerif.woff') format('woff'),
+    url('./fonts/NotoSerif.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LifehackSans';
+    src: url('./fonts/LifehackSans-Medium.eot');
+    src: url('./fonts/LifehackSans-Medium.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/LifehackSans-Medium.woff2') format('woff2'),
+    url('./fonts/LifehackSans-Medium.woff') format('woff'),
+    url('./fonts/LifehackSans-Medium.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/*FONTS - END*/
+
+
+/*GLOBAL - START*/
+
+:root {
+    --bg-color: #8BC8E1;
+}
+
+:root {
+    --line-Height: 1.3em;
+    --zIndex-low: 10;
+    --zIndex-normal: 50;
+    --zIndex-medium: 75;
+    --zIndex-hight: 100;
+}
+
+
+body {
+    font-family: 'Circle', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    /*position: fixed;*/
+    /*overflow: hidden;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*top: 0;*/
+    /*bottom: 0;*/
+    /*width: 1080px;*/
+    /*height: 790px;*/
+}
+
+.app {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 750px;
+    max-height: 830px;
+}
+
+a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+input, textarea {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+textarea {
+    resize: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    font-weight: 400;
+}
+
+h1 {
+    font-family: 'LifeHackSans', serif;
+    letter-spacing: 0.02em;
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+div, nav, p, span, button, input, a, form, ul, li, textarea, *:before, *:after {
+    box-sizing: border-box;
+}
+
+a, a:hover, a:active, a:focus, button, input, button:hover, button:active, button:focus, input:focus, input:active, textarea, textarea:focus, textarea:active {
+    text-decoration: none;
+    outline: none;
+}
+
+input {
+    outline: none;
+    text-decoration: none;
+    border-radius: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 100%;
+}
+
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+    width: 3px; /* ширина для вертикального скролла */
+    height: 3px; /* высота для горизонтального скролла */
+    background-color: rgba(255, 255, 255, 0.5);;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+    background-color:  rgba(255, 255, 255, 0.7);;
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.5);;
+}
+
+
+/*GLOBAL - END*/

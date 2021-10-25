@@ -1,0 +1,180 @@
+.container {
+    position: relative;
+    background: url('../../images/login/loginbg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.content {
+    position: relative;
+    z-index: var(--zIndex-medium);
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    z-index: var(--zIndex-low);
+    animation: anim 1.5s linear forwards;
+}
+
+@keyframes  anim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.inner {
+    display: grid;
+    grid-template-areas: 'back pagetitle menu';
+    grid-template-columns: max-content minmax(200px, 300px) 100px;
+    justify-content: space-between;
+}
+
+.back {
+    grid-area: back;
+    width: 100px;
+    height: 95px;
+    background: url('../../images/login/login-back.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.back a {
+    width: 100%;
+    height: 100%;
+}
+
+.name {
+
+    max-width: 290px;
+    width: 100%;
+    height: 125px;
+    background: url('../../images/login/login-image.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.name p {
+    font-family: 'LifehackSans', serif;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 1.1em;
+    letter-spacing: 0.105em;
+    color: #502B00;
+    padding-top: 30px;
+}
+
+.main {
+    padding-top: 65px;
+}
+
+.title {
+    text-align: center;
+    color: #fff;
+}
+
+.title h1{
+    margin-bottom: 30px;
+    font-family: 'LifehackSans', serif;
+    letter-spacing: 0.105em;
+    font-weight: 600;
+}
+
+.title p {
+    font-size: 18px;
+    line-height: var(--line-Height);
+}
+
+.form {
+    padding-top: 30px;
+}
+
+.formInner {
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+.formInner > p {
+    margin-bottom: 20px;
+}
+
+.input {
+    border: none;
+    background-color: #A2D3E7;
+    padding: 5px 10px;
+    max-width: 340px;
+    width: 100%;
+    color: #fff;
+}
+
+.inputReadOnly {
+    border: none;
+    max-width: 340px;
+    width: 100%;
+    background-color: transparent;
+    color: #fff;
+    padding: 0;
+}
+
+.label {
+    text-align: right;
+    margin-right: 20px;
+    min-width: 130px;
+    display: inline-block;
+}
+
+::-webkit-input-placeholder {
+    font-size: 12px;
+}
+
+::-moz-placeholder {
+    font-size: 12px;
+}
+
+:-ms-input-placeholder {
+    font-size: 12px;
+}
+
+
+
+.buttons {
+    display: grid;
+    align-items: center;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 180px);
+    padding-top: 10px;
+}
+
+.buttons button {
+    font-family: 'Circle', sans-serif;
+    font-size: 14px;
+    line-height: var(--line-Height);
+    padding: 9px 0;
+    border: none;
+    color: #fff;
+}
+
+button.login {
+    background-color: #15A4DE;
+}
+
+button.register {
+    background-color:  #63B735;
+}
+
+button.deleteBooks {
+    background-color:  #E24C4B;
+}

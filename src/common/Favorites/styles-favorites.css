@@ -1,0 +1,18 @@
+.favorites {
+    position: relative;
+    cursor: pointer;
+}
+
+.favorites span {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    background-color: #E11B46;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 23px;
+    color: #fff;
+    font-size: 12px;
+}

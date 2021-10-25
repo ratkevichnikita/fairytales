@@ -1,0 +1,108 @@
+.fav-list {
+    height: 400px;
+    overflow: auto;
+}
+
+.fav-item {
+    display: flex;
+    align-items: center;
+}
+
+.fav-link {
+    position: relative;
+    margin: 0 20px;
+}
+
+.fav-item.blocked .fav-link:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.25);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: var(--zIndex-low);
+    background-image: url('../../../images/icons/block.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 95%;
+}
+
+.fav-list li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.fav-image {
+    position: relative;
+    overflow: hidden;
+    width: 85px;
+    height: 115px;
+    box-shadow: 5px 5px 10px rgba(0, 126, 177, 0.3);
+}
+
+.fav-image img {
+    width: 85px;
+    height: 115px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    object-fit: cover;
+    transform: translate(-50%,-50%);
+}
+
+.fav-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.fav-title span {
+    font-size: 18px;
+    margin-left: 3px;
+}
+
+.fav-remove {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    box-shadow: 3px 3px 6px rgba(0, 126, 177, 0.25);
+    cursor: pointer;
+}
+
+.fav-remove:before,
+.fav-remove:after {
+    content: '';
+    display: block;
+    background-color: #373277;
+    width: 14px;
+    height: 2px;
+    position: absolute;
+    left: 8px;
+    top: 14px;
+}
+
+.fav-remove:before {
+    transform: rotate(45deg);
+}
+
+.fav-remove:after {
+    transform: rotate(-45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
