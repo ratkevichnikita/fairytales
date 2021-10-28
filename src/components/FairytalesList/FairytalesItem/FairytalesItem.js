@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import headPhone from "../../../images/controls/headphone.svg";
 
 const FairytalesItem = (props) => {
+
   return (
     <li onClick={() => props.price && props.price > 0 ? props.handleOpenModalForBuyBook(props.id) : null}  key={props.id} className={props.price && props.price > 0 ? 'book-item blocked' : 'book-item'}>
       <div onClick={(event) => props.handleSetFavorites(event,props.id)} className={props.currentfavoriteBook === props.id ? 'book-favorites active' : 'book-favorites'}>

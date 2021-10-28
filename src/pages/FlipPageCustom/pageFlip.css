@@ -41,14 +41,10 @@
 .page-flip-wrapper.static-bg .flip-page-parent:after {
     content: '';
     display: block;
-    width: calc(100% + 50px);
     width: calc(100% + 60px);
-    height: calc(100% + 30px);
     height: calc(100% + 77px);
-    background: url('../../images/book-pages/book-new.png') no-repeat center / contain;
+
     position: absolute;
-    right: -29px;
-    top: -28px;
     right: -37px;
     top: -42px;
     /*box-shadow: 3px 10px 60px rgba(0, 0, 0, 0.7);*/
@@ -74,6 +70,16 @@
     box-shadow: inset 0 0 30px 0 rgba(36,10,3,0.5), -2px 0 5px 2px rgba(0,0,0,0.4);
 }
 
+.page-cover .flip-page-inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-cover .flip-page-text {
+    display: none;
+}
 
 .page-cover-title {
     height: 100%;
@@ -102,9 +108,6 @@
     box-shadow: inset 7px 0 20px -7px rgba(0,0,0,0.4);
 }
 
-
-
-
 .flip-page p {
     font-family: 'Noto', serif;
     color: #734713;
@@ -124,10 +127,9 @@
 /*}*/
 
 .flip-page .flip-page-inner {
-    height: 90%;
+    height: 100%;
     overflow: hidden;
     padding: 20px;
-    margin-top: 10px;
 }
 
 .page-cover-content {
@@ -135,6 +137,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.flip-page-text {
+    height: calc(100% - 30px);
+}
+
+.flip-page-text img {
+    height: 100%;
 }
 
 .page-flip-box {
@@ -162,10 +172,8 @@
 .flip-page-number {
     position: relative;
     z-index: var(--zIndex-low);
-    font-size: 14px;
+    font-size: 12px;
     margin-top: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
     padding-top: 5px;
     border-top: 1px solid rgba(0,0,0,0.3);
 }

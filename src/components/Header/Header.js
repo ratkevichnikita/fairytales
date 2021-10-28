@@ -10,7 +10,7 @@ import SearchContainer from "../../common/Search/SearchContainer";
 import home from './images/home.svg'
 
 //styles
-import classes from './style-header.css';
+import './style-header.css';
 
 const Header = (props) => {
 

@@ -22,7 +22,7 @@ const LoginPage = () => {
               <div className={classes.name}>
                 <p>Innstillinger</p>
               </div>
-              <Menu loginPage={loginPage} />
+              {/*<Menu loginPage={loginPage} />*/}
             </div>
           </header>
           <div className={classes.main}>

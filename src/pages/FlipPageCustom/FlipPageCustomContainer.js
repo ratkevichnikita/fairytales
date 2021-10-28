@@ -1,6 +1,6 @@
 //global dependencies
 import React, {useEffect} from "react";
-import {connect, useSelector} from "react-redux";
+import {connect} from "react-redux";
 import {withRouter} from "react-router";
 import {
   getBookPagesAll, setBookPagesAll,
@@ -11,7 +11,6 @@ import {
 
 //components
 import FlipPageCustom from "./FlipPageCustom";
-import Preloader from "../../common/Preloader/Preloader";
 
 const FlipPageCustomContainer = (props) => {
 
@@ -34,9 +33,7 @@ const FlipPageCustomContainer = (props) => {
   }, [bookId])
 
   return (
-
        <FlipPageCustom {...props} bookPagesSort={bookPagesSort} />
-
   )
 }
 
@@ -55,7 +52,7 @@ let mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, {
-  getBookPagesAll, setMakeChoose,
+  getBookPagesAll,
   setPageNumbersForOpenedBooks,
   setCurrentTimeForListenedBook, setBookPagesAll,
   setStateOfAudio, setTotalPagesForCurrentBook,

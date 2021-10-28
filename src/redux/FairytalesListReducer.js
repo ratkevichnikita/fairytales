@@ -2,9 +2,8 @@ import {booksAPI} from "../api/api";
 
 const SET_BOOKS = 'SET_BOOKS';
 const SET_ALL_BOOK_PAGES = 'SET_ALL_BOOK_PAGES';
-const SET_LOCALSTORAGE_VIEWED_BOOKS = 'SET_LOCALSTORAGE_VIEWED_BOOKS';
+
 const SET_BOOKS_FROM_SEARCH = 'SET_BOOKS_FROM_SEARCH';
-const SET_BOOKS_FROM_SORT = 'SET_BOOKS_FROM_SORT';
 const SET_PAGENUMBER_FOR_OPENED_BOOKS = 'SET_PAGENUMBER_FOR_OPENED_BOOKS';
 const SET_CURRENT_TIME_FOR_LISTENED_BOOK = 'SET_CURRENT_TIME_FOR_LISTENED_BOOK';
 const SET_TOUCHED_BOOK = 'SET_THOUCHED_BOOK';
@@ -38,32 +37,10 @@ const FairytalesListReducer = (state = initialState, action) => {
         ...state,
         bookPagesAll: [...action.bookPagesAll]
       }
-    case SET_LOCALSTORAGE_VIEWED_BOOKS:
-      return {
-        ...state,
-        touchedBooks: [...state.touchedBooks].map(item => {
-          if (item.id === action.bookId) {
-            return {
-              ...item,
-              isReading: action.reading,
-              isListen: action.listening,
-              // currentTime: 0,
-              pageNumber: action.pageNum,
-              progress: 0,
-            }
-          }
-          return item
-        })
-      }
     case SET_BOOKS_FROM_SEARCH:
       return {
         ...state,
         books: [...action.booksFromSearch]
-      }
-    case SET_BOOKS_FROM_SORT:
-      return {
-        ...state,
-        books: [...action.booksFromSort]
       }
     case SET_PAGENUMBER_FOR_OPENED_BOOKS:
       return {
@@ -98,6 +75,14 @@ const FairytalesListReducer = (state = initialState, action) => {
         ...state,
         touchedBooks: [...state.touchedBooks, {...action.bookInfo, isReading: null, isPause:null, totalPages:null, isListen: null}]
       }
+      // return {
+      //   ...state,
+      //   touchedBooks: [...state.touchedBooks].map((item,index,arr) => {
+      //     if(arr.length === 0 || item.id !== action.bookId) {
+      //       return {...action.bookInfo, isReading: null, isPause:null, totalPages:null, isListen: null}
+      //     }
+      //   })
+      // }
     case SET_STATE_OF_AUDIO_FOR_CURRENTBOOK:
       return {
         ...state,
@@ -159,13 +144,7 @@ const FairytalesListReducer = (state = initialState, action) => {
 
 export const showOnlyFreeBooks = (free) => ({type: SHOW_ONLY_FREE_BOOKS, free});
 export const setBooks = (books) => ({type: SET_BOOKS, books});
-export const makeChoose = (bookId, reading, listening, pageNum) => ({
-  type: SET_LOCALSTORAGE_VIEWED_BOOKS,
-  bookId,
-  reading,
-  listening,
-  pageNum,
-})
+
 export const setBookPagesAll = (bookPagesAll) => ({type: SET_ALL_BOOK_PAGES, bookPagesAll});
 export const setFetchingToggle = (fetching) => ({type: SET_FETCHING_TOGGLE, fetching})
 
@@ -193,25 +172,9 @@ export const setTotalPagesForCurrentBook = (bookId,totalPages) => {
   }
 }
 
-export const setBooksFromSort = (booksFromSort) => {
-  return (dispatch, getState) => {
-    dispatch({type: SET_BOOKS_FROM_SORT, booksFromSort})
-    const state = getState();
-    localStorage.setItem('viewedBooksNew', JSON.stringify(state.fairytalesList.touchedBooks))
-  }
-}
-
 export const setBooksFromSearch = (booksFromSearch) => {
   return (dispatch, getState) => {
     dispatch({type: SET_BOOKS_FROM_SEARCH, booksFromSearch})
-    const state = getState();
-    localStorage.setItem('viewedBooksNew', JSON.stringify(state.fairytalesList.touchedBooks))
-  }
-}
-
-export const setMakeChoose = (bookId, reading, listening, pageNum) => {
-  return (dispatch, getState) => {
-    dispatch(makeChoose(bookId, reading, listening, pageNum))
     const state = getState();
     localStorage.setItem('viewedBooksNew', JSON.stringify(state.fairytalesList.touchedBooks))
   }

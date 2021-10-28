@@ -31,19 +31,20 @@ const FairytalesList = (props) => {
     setBuyBookModalOpened(!buyBookModalOpened)
   }
 
-  let fairytalesItem =   <TransitionGroup component={"ul"} className={props.books.length <= 3 ? 'book-list books-booksWidth' : 'book-list' }> { publishedBook
+  let fairytalesItem =  <TransitionGroup  component={"ul"} className={props.books.length <= 3 ? 'book-list books-booksWidth' : 'book-list' }> { publishedBook
     .filter(item => props.showFreeBooks ? item.price === null : item)
     .filter(item => {
       if (props.sortByTextAndAudio === 'Show only with text') {
         return (!item.bookSound || !item.bookSound.regions)
       } else if (props.sortByTextAndAudio === 'Show only with audio') {
-        return item.bookSound && item.bookSound.regions
+        return item.bookSound?.regions
       } else {
         return item
       }
     })
     .map(item => {
-      let y = props.touchedBooks.filter(elem => elem.id === item.id).map(elem => elem.pageNumber);
+      // let y = props.touchedBooks.filter(elem => elem.id === item.id).map(elem => elem.pageNumber);
+
       let hasProgress = props.touchedBooks.filter(el => el.id === item.id).map(el => el.progress).join('');
       let currentfavoriteBook;
       if(favoritesBooks.length > 0) {
@@ -67,7 +68,6 @@ const FairytalesList = (props) => {
               handleOpenModalForBuyBook={handleOpenModalForBuyBook}
               currentfavoriteBook={currentfavoriteBook}
               hasProgress={hasProgress}
-              // y={y}
             />
         </CSSTransition>
       )
@@ -75,12 +75,10 @@ const FairytalesList = (props) => {
   return (
       <>
         {
-          props.books.length === 0 && !props.isFetchingToggle
-            ? <div style={{marginTop: 50,color:'#fff'}} >К сожалению ничего не найдено</div>
+          (props.books.length === 0  || fairytalesItem.props.children[1].length === 0) && !props.isFetchingToggle
+            ? <div style={{marginTop: 50,color:'#fff'}} >Unfortunately no results were found</div>
             : fairytalesItem
         }
-
-
       </>
   );
 

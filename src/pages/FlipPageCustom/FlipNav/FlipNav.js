@@ -2,9 +2,6 @@ import React from 'react';
 
 import arrow from "../../../images/icons/book-arrow.svg";
 import Controls from "./Controls/Controls";
-import classes from "../../FairytalePage/FairytalePage.module.css";
-import listenBook from "../../../images/controls/audiobook.svg";
-import book from "../../../images/icons/book.svg";
 
 const FlipNav = (props) => {
 
@@ -30,32 +27,11 @@ const FlipNav = (props) => {
               type="button" onClick={prevButtonClick}>
         <img src={arrow} alt="previous page"/>
       </button>
-      {/*{*/}
-      {/*  (!props.currentBook.isListen && props.currentPageNum > 0 && props.currentBook.bookSound?.regions && props.currentBook.bookSound?.regions.length > 0) && (*/}
-      {/*    <>*/}
-      {/*      <div onClick={() => {*/}
-      {/*        props.setMakeChoose(+props.bookId, false, true, props.currentPageNum, false)*/}
-      {/*      }} className={classes.listenBook}>*/}
-      {/*        <img src={listenBook} alt="listen audio"/>*/}
-      {/*      </div>*/}
-      {/*    </>*/}
-      {/*  )*/}
-      {/*}*/}
       {
         (+props.currentBook.pageNumber > 0 && props.currentBook.bookSound?.regions && props.currentBook.bookSound?.regions.length > 0) && (
           <Controls {...props} />
         )
       }
-
-      {/*{ ( props.currentBook.isListen && props.currentPageNum > 0 && props.currentBook.bookSound?.regions && props.currentBook.bookSound?.regions.length > 0) && (*/}
-      {/*  <div onClick={() => {*/}
-      {/*    props.setMakeChoose(+props.bookId, true, false, props.currentPageNum)*/}
-      {/*  }} className={classes.listenBook}>*/}
-      {/*    <img src={book} alt="listen audio"/>*/}
-      {/*  </div>*/}
-      {/*)*/}
-      {/*}*/}
-      {/*НЕ показываем количество страниц, пока мы находимся на 0 странице ( обложка )*/}
       {
         props.currentPageNum > 0 && (
           <div className="flip-page-count-pages">
@@ -65,7 +41,6 @@ const FlipNav = (props) => {
           </div>
         )
       }
-
       <button
         className={+props.currentPageNum + 1 === props.totalPages ? 'flip-page-arrow next hidden' : 'flip-page-arrow next'}
         type="button" onClick={nextButtonClick}>

@@ -1,57 +1,20 @@
 //global dependencies
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 import HTMLFlipBook from "react-pageflip";
-
+import {useSelector} from "react-redux";
 //styles
 import './pageFlip.css';
 
 //components
-import classes from "../FairytalePage/FairytalePage.module.css";
 import Header from "../../components/Header/Header";
 import FlipNav from "./FlipNav/FlipNav";
 import listenBook from "../../images/controls/audiobook.svg";
 import {setTotalPagesForCurrentBook} from "../../redux/FairytalesListReducer";
-import {useSelector} from "react-redux";
 import Preloader from "../../common/Preloader/Preloader";
 
 //images - start
 
 const FlipPageCustom = React.memo((props) => {
-
-  function getWindowDimensions() {
-    const { innerWidth: width, innerHeight: height } = window;
-    return {
-      width,
-      height
-    };
-  }
-
-  function useWindowDimensions() {
-    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-
-    useEffect(() => {
-      function handleResize() {
-        setWindowDimensions(getWindowDimensions());
-      }
-
-      window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-    return windowDimensions;
-  }
-
-  let innerHeight = useWindowDimensions().height;
-  let innerHeightCalc = innerHeight > 800 ? 640 : innerHeight - 160;
-  let innerWidthCalc = innerHeight * 0.55 > 480 ? 480 : innerHeight * 0.55;
-
-  console.log('innerWidthCalc',innerWidthCalc)
-  console.log('innerHeightCalc',innerHeightCalc)
-
-
-
-
-
 
   let bookId = props.match.params.bookId;
   const isFetching = useSelector(state => state.fairytalesList.isFetchingToggle)
@@ -124,27 +87,29 @@ const FlipPageCustom = React.memo((props) => {
       // Страница с 0 индексом становится обложкой
       <div key={item.pageNumber} className={bookPageClassName}>
         <div className="flip-page-inner">
-          { item.blocks ? item.blocks.map((block,index) =>  {
-            if(block.type === 'paragraph') {
-              return <p key={index} dangerouslySetInnerHTML={{__html: block.data.text}}/>
-            } else if (block.type === 'image') {
-              return  <img key={index} src={`${block.data.file.url}`} alt=""/>
-            } else {
-              return null
-            }
-          }) : null}
-        </div>
-        <>
+          <div className="flip-page-text">
+            { item.blocks ? item.blocks.map((block,index) =>  {
+              if(block.type === 'paragraph') {
+                return <p key={index} dangerouslySetInnerHTML={{__html: block.data.text}}/>
+              } else if (block.type === 'image') {
+                return  <img key={index} src={`${block.data.file.url}`} alt=""/>
+              } else {
+                return null
+              }
+            }) : null}
+          </div>
           { item.pageNumber > 0
             ? <div className="flip-page-number">{item.pageNumber}</div>
             : <div className="page-cover-title">
               {`${currentBook.title}`}
-              <div className={classes.authorName}>
+              <div>
                 <span>{currentBook.author}</span>
               </div>
             </div>
           }
-        </>
+
+        </div>
+
       </div>
     )
   })
@@ -201,21 +166,17 @@ const FlipPageCustom = React.memo((props) => {
         <div className="flip-page-content">
           <div className="flip-page-header">
             <Header startPage={props.startPage} hideSearch={props.hideSearch}/>
-            {/*<div style={{color:'#fff'}}>*/}
-            {/*    <p>innerHeightCalc {innerHeightCalc}</p>*/}
-            {/*    <p>innerWidthCalc {innerWidthCalc}</p>*/}
-            {/*</div>*/}
           </div>
           {
             isFetching
               ? <Preloader />
               : <div className={currentPageNum >= 3 ? `page-flip-wrapper static-bg` :`page-flip-wrapper`}>
                 <HTMLFlipBook
-                  width={innerWidthCalc}
+                  width={420}
                   minWidth={115}
-                  maxWidth={innerWidthCalc}
-                  height={innerHeightCalc}
-                  maxHeight={640}
+                  maxWidth={420}
+                  height={600}
+                  maxHeight={600}
                   minHeight={300}
                   ref={flipRef}
                   onChangeState={(e) => onChangeState(e.data)}
