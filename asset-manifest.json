@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/fairytales/static/css/main.c39847d0.chunk.css",
-    "main.js": "/fairytales/static/js/main.46b043ca.chunk.js",
-    "main.js.map": "/fairytales/static/js/main.46b043ca.chunk.js.map",
+    "main.js": "/fairytales/static/js/main.6f79aebe.chunk.js",
+    "main.js.map": "/fairytales/static/js/main.6f79aebe.chunk.js.map",
     "runtime-main.js": "/fairytales/static/js/runtime-main.f0ac7d8e.js",
     "runtime-main.js.map": "/fairytales/static/js/runtime-main.f0ac7d8e.js.map",
     "static/js/2.644f4f62.chunk.js": "/fairytales/static/js/2.644f4f62.chunk.js",
@@ -41,6 +41,6 @@
     "static/js/runtime-main.f0ac7d8e.js",
     "static/js/2.644f4f62.chunk.js",
     "static/css/main.c39847d0.chunk.css",
-    "static/js/main.46b043ca.chunk.js"
+    "static/js/main.6f79aebe.chunk.js"
   ]
 }
