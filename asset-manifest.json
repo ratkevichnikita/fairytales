@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/fairytales/static/css/main.c39847d0.chunk.css",
-    "main.js": "/fairytales/static/js/main.bc5bce34.chunk.js",
-    "main.js.map": "/fairytales/static/js/main.bc5bce34.chunk.js.map",
+    "main.js": "/fairytales/static/js/main.6f79aebe.chunk.js",
+    "main.js.map": "/fairytales/static/js/main.6f79aebe.chunk.js.map",
     "runtime-main.js": "/fairytales/static/js/runtime-main.f0ac7d8e.js",
     "runtime-main.js.map": "/fairytales/static/js/runtime-main.f0ac7d8e.js.map",
-    "static/js/2.2e7a40b8.chunk.js": "/fairytales/static/js/2.2e7a40b8.chunk.js",
-    "static/js/2.2e7a40b8.chunk.js.map": "/fairytales/static/js/2.2e7a40b8.chunk.js.map",
+    "static/js/2.644f4f62.chunk.js": "/fairytales/static/js/2.644f4f62.chunk.js",
+    "static/js/2.644f4f62.chunk.js.map": "/fairytales/static/js/2.644f4f62.chunk.js.map",
     "static/js/3.fc67a107.chunk.js": "/fairytales/static/js/3.fc67a107.chunk.js",
     "static/js/3.fc67a107.chunk.js.map": "/fairytales/static/js/3.fc67a107.chunk.js.map",
     "index.html": "/fairytales/index.html",
     "static/css/main.c39847d0.chunk.css.map": "/fairytales/static/css/main.c39847d0.chunk.css.map",
-    "static/js/2.2e7a40b8.chunk.js.LICENSE.txt": "/fairytales/static/js/2.2e7a40b8.chunk.js.LICENSE.txt",
+    "static/js/2.644f4f62.chunk.js.LICENSE.txt": "/fairytales/static/js/2.644f4f62.chunk.js.LICENSE.txt",
     "static/media/App.css": "/fairytales/static/media/NotoSerif.e2c36cd1.eot",
     "static/media/Sorting.module.css": "/fairytales/static/media/arrow.d6261c1a.svg",
     "static/media/audiobook.7c87dd20.svg": "/fairytales/static/media/audiobook.7c87dd20.svg",
@@ -39,8 +39,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.f0ac7d8e.js",
-    "static/js/2.2e7a40b8.chunk.js",
+    "static/js/2.644f4f62.chunk.js",
     "static/css/main.c39847d0.chunk.css",
-    "static/js/main.bc5bce34.chunk.js"
+    "static/js/main.6f79aebe.chunk.js"
   ]
 }
