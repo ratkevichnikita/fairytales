@@ -73,16 +73,8 @@ const FairytalesListReducer = (state = initialState, action) => {
     case SET_TOUCHED_BOOK:
       return {
         ...state,
-        touchedBooks: [...state.touchedBooks, {...action.bookInfo, isReading: null, isPause:null, totalPages:null, isListen: null}]
+        touchedBooks: [...state.touchedBooks, {...action.bookInfo, isReading: null, isPause:true, totalPages:null, isListen: null}]
       }
-      // return {
-      //   ...state,
-      //   touchedBooks: [...state.touchedBooks].map((item,index,arr) => {
-      //     if(arr.length === 0 || item.id !== action.bookId) {
-      //       return {...action.bookInfo, isReading: null, isPause:null, totalPages:null, isListen: null}
-      //     }
-      //   })
-      // }
     case SET_STATE_OF_AUDIO_FOR_CURRENTBOOK:
       return {
         ...state,

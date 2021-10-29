@@ -68,6 +68,7 @@ const FairytalesList = (props) => {
               handleOpenModalForBuyBook={handleOpenModalForBuyBook}
               currentfavoriteBook={currentfavoriteBook}
               hasProgress={hasProgress}
+              currentBookId={props.currentBookId}
             />
         </CSSTransition>
       )

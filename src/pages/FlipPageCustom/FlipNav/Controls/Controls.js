@@ -17,7 +17,7 @@ const Controls = (props) => {
   const [isPlaying, setIsPlaying] = useState(false)
   const [volumeValue, setvolumeValue] = useState(0.5)
   const [duration, setDuration] = useState(0)
-  const [currentTime, setCurrentTime] = useState(props.currentBook.currentTime)
+  const [currentTime, setCurrentTime] = useState(props.currentBook.currentTime || 0)
 
   const audioRef = useRef();
   const audio = audioRef.current;

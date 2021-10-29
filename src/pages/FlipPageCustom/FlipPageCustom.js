@@ -113,10 +113,12 @@ const FlipPageCustom = React.memo((props) => {
       </div>
     )
   })
-
+  // console.log(bookState)
   // В момент перелистываения страницы записываем в стейт номер текущей страницы
   const onPageTurn = (e) => {
-    if (currentBook.bookSound?.regions) {
+
+    if (currentBook.bookSound?.regions && e.object.flipController.state === 'flipping' || e.object.isUserMove) {
+
       currentRegionsStart = currentBook.bookSound.regions.find(item => item.data.pageNumber === +e.data);
 
       props.setPageNumbersForOpenedBooks(+bookId, e.data, ( (currentBook.bookSound?.regions && currentBook.bookSound.regions.length > 0) && e.data > 1 ) ? currentRegionsStart.start : 0);
