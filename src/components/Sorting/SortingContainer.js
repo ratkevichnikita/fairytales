@@ -19,7 +19,7 @@ const SortingContainer = (props) => {
       // Проходим по всем опублиованным книгам и получаем имена авторов
       let emptyAuthor = props.books.filter(item => item.published).map(item => item.author);
       // Добавляем в начала массива имен авторов общее название ( показать всех )
-      emptyAuthor.unshift("Av forfatter");
+      emptyAuthor.unshift("Choose author");
       let uniqueSet = new Set(emptyAuthor);
       // сетаем получившийся массив в стор
       props.setAuthorNames([...uniqueSet])

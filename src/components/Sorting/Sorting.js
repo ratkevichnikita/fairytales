@@ -12,7 +12,7 @@ const Sorting = (props) => {
   // По клику на пункт в выпадающем списке, менять название на тот что выбран
 
   let handleClick = (e) => {
-    if (e.currentTarget.textContent === 'Av forfatter') {
+    if (e.currentTarget.textContent === 'Choose author') {
       e.currentTarget.textContent = ''
     }
     props.setSelectedAuthorName(e.currentTarget.textContent)
@@ -82,7 +82,7 @@ const Sorting = (props) => {
             {
               props.selectedAuthorName !== ''
                 ? props.selectedAuthorName
-                : 'Av forfatter'
+                : 'Choose author'
             }
           </p>
           {props.authorNames.length > 1 && props.authorNamesIsToggle && (
@@ -98,13 +98,13 @@ const Sorting = (props) => {
             {
               props.selectedGenre?.genreTitle !== ''
                 ? props.selectedGenre.genreTitle
-                : 'Sjanger'
+                : 'Choose genre'
             }
           </p>
           {
             props.genreList?.length > 0 && genreListToggle && (
               <ul  className={classes.inner}>
-                <li onClick={() => handeleGenreClick('','')}>Sjanger</li>
+                <li onClick={() => handeleGenreClick('','')}>Chose genre</li>
                 {
                   props.genreList.map(item => <li onClick={() => handeleGenreClick(item.title,item.id) } key={item.id}>{item.title}</li>)
                 }

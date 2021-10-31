@@ -13,7 +13,7 @@ const SELECTED_AUTHORNAME = 'SELECTED_AUTHORNAME';
 
 let initialState = {
   authorNamesIsToggle: false,
-  authorNames: [{author: "Av forfatter"}],
+  authorNames: [{author: "Choose author"}],
   booksListFromSorting: [],
   resultsFromSearch: '',
   sortByTextAndAudio: 'Show all',
@@ -32,7 +32,7 @@ const sortingReducers = (state = initialState, action) => {
     case GET_AUTHORNAMES:
       return {
         ...state,
-        authorNames: [{author: "Av forfatter"}, action.authorNames]
+        authorNames: [{author: "Choose author"}, action.authorNames]
       }
     case CHANGE_AUTHOR_NAME:
       return {
